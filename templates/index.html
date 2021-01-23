@@ -1,0 +1,39 @@
+<head>
+    <!-- <link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}"> 
+    <link rel = "stylesheet" href="{{ url_for('static', filename = 'style.css')}}"> -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+
+
+{% block content %}
+<div>
+	<div class= "header">
+		<img class="logo center" src = "../static/images/carbonailogo.png">
+	</div>
+	<img class="plate center" src = "../static/images/carbonaifood.png">
+
+	<div class = "image-section">
+		<p class = "image-section"> should be hidden!!! </p>
+	</div>
+	
+
+<form class="center image-upload" id="image-upload" method="post">
+	<input id="imageURL" class="center" type="text" id="fname" name="fname" value="Paste in a URL of image"><br>
+	<input class="center" type="submit" value="Submit">
+</form>
+	<!-- 
+<div class="image-upload ">
+	<label for="file-input">
+		<img class= "upload center" src="../static/images/carbonaiupload.png"/>
+	</label>
+
+	-->
+
+	<!-- <input id="file-input" type="file" /> -->
+</div>
+
+{% endblock %}

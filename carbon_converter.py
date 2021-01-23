@@ -1,5 +1,6 @@
 # carbon_converter.py
 # since: 1.22.2021
+
 class carbon_converter:
     def __init__(self):
         self.food_to_carbon = {
@@ -27,13 +28,15 @@ class carbon_converter:
             "cheese" : 21.2,
             "egg" : 4.5,
             "fish" : 5.1,
-            "shrimp" : 11.8
+            "shrimp" : 11.8,
+            "soup" : 12.3
         }
         
         self.finished_food_to_carbon = {
-            "hamburger" : 243.0,
-            "ramen" : 0.0,
-            "mochi" : 0.0,
+            "burger" : 83.7,
+            "ramen" : 76.9,
+            "samosa" : 11.1,
+            # "cake" : 
         }
 
 

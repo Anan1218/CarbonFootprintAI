@@ -21,7 +21,7 @@ request = service_pb2.PostModelOutputsRequest(
     
     model_id='bd367be194cf45149e75f01d59f77ba7',
     inputs=[
-      resources_pb2.Input(data=resources_pb2.Data(image=resources_pb2.Image(url='https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg')))
+      resources_pb2.Input(data=resources_pb2.Data(image=resources_pb2.Image(url='https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_358538228.jpg')))
     ])
 response = stub.PostModelOutputs(request, metadata=metadata)
 
@@ -37,6 +37,6 @@ for concept in response.outputs[0].data.concepts:
 
 print("Total carbon emission based on ingredients: " + str(total) + ' kgCO2')
 food_item = response.outputs[0].data.concepts[0]
-big_carbon = cc.get_carbon(food_item.name)
+big_carbon = cc.get_big_carbon(food_item.name)
 if big_carbon != -1:
     print(food_item.name + " has an estimated carbon footprint of " + str(big_carbon) +" kgCO2")
