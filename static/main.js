@@ -43,7 +43,7 @@ $(document).ready(function () {
 									element.appendChild(para);
 								}
 
-								$('#result').text('Your meal emmited ' + response.result.toFixed(2) + " kg of CO2. Here's the breakdown:");
+								$('#result').text('Your meal emitted ' + response.result.toFixed(2) + " kg of CO2. Here's the breakdown:");
 								
                 
 						},
