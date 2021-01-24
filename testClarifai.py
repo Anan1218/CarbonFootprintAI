@@ -18,7 +18,7 @@ request = service_pb2.PostModelOutputsRequest(
     model_id='bd367be194cf45149e75f01d59f77ba7',
     inputs=[
         # good mochi: https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_358538228.jpg
-        resources_pb2.Input(data=resources_pb2.Data(image=resources_pb2.Image(url='https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_358538228.jpg')))
+        resources_pb2.Input(data=resources_pb2.Data(image=resources_pb2.Image(url='https://media-cdn.tripadvisor.com/media/photo-s/06/f9/70/5e/caffe-chino.jpg')))
     ])
 response = stub.PostModelOutputs(request, metadata=metadata)
 

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// Init
 	console.log("poop");
-	$('.image-section').hide();
+	//$('.img-preview').hide();
 	//$('.loader').hide();
 	//$('#result').hide();
 
@@ -22,15 +22,33 @@ $(document).ready(function () {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-		//$('.image-section').show();
-
     var form = $('#imageURL').val();
-    console.log(form);
+		//$('.img-preview').show();
+		document.getElementById("img-preview").style.border = "5px solid #94fbab";
+		$('#imagePreview').css('background-image', 'url('+ form + ')');
+
     $.ajax({
 					 type: "POST",
 					 url: '/predict',
            data: form, // serializes the form's elements.
-           success: 'success'
+           success: function (response) {
+                // Get and display the result
+								
+								let breakdown = "";
+								
+								for (let i = 0; i < response.foodItems.length; i++)
+								{
+									var para = document.createElement("p");
+									var node = document.createTextNode(response.foodItems[i] + "kg");
+									para.appendChild(node);
+									var element = document.getElementById("div1");
+									element.appendChild(para);
+								}
+
+								$('#result').text('Your carbon emisions are: ' + response.result.toFixed(2) + " kg of CO2 for this meal. Here is the breakdown:");
+								
+                
+            },
          });
 
     

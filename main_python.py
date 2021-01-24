@@ -17,7 +17,6 @@ class Main_Python:
     
     # constructor
     def __init__ (self, url):
-        print("ITS WORKING")
         self.link = url
         self.food_list = []
         self.carbon_values = []
@@ -39,7 +38,7 @@ class Main_Python:
         if response.status.code != status_code_pb2.SUCCESS:
             raise Exception("Request failed, status code: " + str(response.status.code))
 
-        
+        self.food_list = response.outputs[0].data.concepts
         return response.outputs[0].data.concepts # may need to return
 
     # complies list of only ingredients and their carbon footprint
@@ -49,13 +48,24 @@ class Main_Python:
         for food in foods:
             carbon_footprint = (cc.get_carbon(food.name))
             if carbon_footprint != -1 and food.value > .5:
-                array.append((food.name, carbon_footprint))
+                # carbon_footprint = str(round(carbon_footprint, 2))
+                array.append((food.name, str(round(carbon_footprint, 2))))	
+
+        self.carbon_values = array
         return array # might cause an issue, may need to return values
 
     # gets the total carbon footprint of all ingredients
     def total_carbon_ingredients(self, values):
         total = 0
         for carbon in values:
-            total += carbon[1]
+            total += float(carbon[1])
 
         return total
+
+    # gets the total carbon footprint if the food is a finished food
+    def get_finished_food_carbon(self):
+        finished_food = (self.food_list[0]).name
+        carbon = cc.get_big_carbon(finished_food)
+        if(carbon != -1):
+            return (carbon)
+        return -1

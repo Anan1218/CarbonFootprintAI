@@ -14,16 +14,25 @@
 	<div class= "header">
 		<img class="logo center" src = "../static/images/carbonailogo.png">
 	</div>
-	<img class="plate center" src = "../static/images/carbonaifood.png">
+	<!-- <img class="plate center" src = "../static/images/carbonaifood.png"> -->
 
-	<div class = "image-section">
-		<p class = "image-section"> should be hidden!!! </p>
+	<div id="img-preview" class="img-preview center">
+		<div id="imagePreview">
+		</div>	
+	</div>
+
+	<h3 id="result">
+		<span class = "center results"></span>
+	</h3>
+
+	<div id = "div1">
+
 	</div>
 	
 
 <form class="center image-upload" id="image-upload" method="post">
 	<input id="imageURL" class="center" type="text" id="fname" name="fname" value="Paste in a URL of image"><br>
-	<input class="center" type="submit" value="Submit">
+	<input class="submit_button" type="submit" value="Submit">
 </form>
 	<!-- 
 <div class="image-upload ">
