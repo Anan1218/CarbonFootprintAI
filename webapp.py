@@ -31,8 +31,8 @@ def postRequest():
 		# print(mp.make_carbon_array(mp.get_food()))
 		print('%.1f' % (mp.total_carbon_ingredients(list_of_carbon)))
 		result = mp.total_carbon_ingredients(list_of_carbon)
-		if(mp.get_finished_food_carbon() != -1):
-			result = mp.get_finished_food_carbon()
+		# if(mp.get_finished_food_carbon() != -1):
+			# result = mp.get_finished_food_carbon()
 
 		foodItems = []
 		for item in list_of_carbon:
