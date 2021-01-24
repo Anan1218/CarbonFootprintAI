@@ -33,9 +33,7 @@ $(document).ready(function () {
            data: form, // serializes the form's elements.
            success: function (response) {
                 // Get and display the result
-								
-								let breakdown = "";
-								
+								$('#div1').empty();
 								for (let i = 0; i < response.foodItems.length; i++)
 								{
 									var para = document.createElement("p");
@@ -45,10 +43,13 @@ $(document).ready(function () {
 									element.appendChild(para);
 								}
 
-								$('#result').text('Your carbon emisions are: ' + response.result.toFixed(2) + " kg of CO2 for this meal. Here is the breakdown:");
+								$('#result').text('Your meal emmited ' + response.result.toFixed(2) + " kg of CO2. Here's the breakdown:");
 								
                 
-            },
+						},
+						error:function(u) {
+							$('#result').text("The link you input does not work. Please try another.");
+						}
          });
 
     

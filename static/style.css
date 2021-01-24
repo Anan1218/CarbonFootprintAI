@@ -54,9 +54,10 @@ body {background-color:#323036;}
 
 #result
 {
-	color: #FFFFFF !important;
-  text-align: center;
-  margin-top: 10px;
+	color: #94fbab !important;
+  	text-align: center;
+	margin-top: 10px;  
+	font-family: 'Helvetica';
 }
 
 #imageURL
@@ -76,4 +77,6 @@ body {background-color:#323036;}
 {
 	color: #FFFFFF;
 	text-align: center;
+	font-family : 'Helvetica';
+	margin-bottom: 40px;
 }
